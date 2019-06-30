@@ -3,23 +3,7 @@ kona-base项目为基础框架依赖, 我们其他服务只需要按需引入kon
 
 ### kona-base-model
 #### 目的
-kona-base-model 项目的目的主要是为了之后一系列微服务指定相同的pojo模型, 我们这里将pojo分为 po-对接持久层对象; vo-与视图层交互的基类; dto-rpc通信数据传输对象; 除了基本模型之外我们这里还定义相关anno && enums基础枚举的包, 具体树形结构如下:
-│                         └── model
-│                           ├── anno
-│                           │   └── ExcelColumnAnno.java
-│                           ├── dto
-│                           │   └── BaseDto.java
-│                           ├── enums
-│                           │   ├── BaseEnum.java
-│                           │   ├── ErrorLevelEnum.java
-│                           │   └── MonitorLevelEnum.java
-│                           ├── po
-│                           │   └── BasePo.java
-│                           └── vo
-│                               ├── BaseReq.java
-│                               ├── BaseResp.java
-│                               ├── PageQueryReq.java
-│                               └── PageQueryResp.java
+kona-base-model 项目的目的主要是为了之后一系列微服务指定相同的pojo模型, 我们这里将pojo分为 po-对接持久层对象; vo-与视图层交互的基类; dto-rpc通信数据传输对象; 除了基本模型之外我们这里还定义相关anno && enums基础枚举的包.
 
 #### model介绍
 
