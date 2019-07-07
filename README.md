@@ -10,6 +10,11 @@ kona-base项目为基础框架依赖, 我们其他服务只需要按需引入kon
 此项目是我们之后所有项目的顶层父依赖, 所以先打包到自己的maven本地仓库, 或者上传到自己项目组的私服中.
 
 # kona-base 基础组件介绍和使用
+
+### 使用前准备(重要)
+1. 因为我们所有项目都依赖顶层父项目, 所以这里需要将顶层父项目(kona-dependencies)打到自己本地仓库, 或者上传私服
+2. 将我们的kona-base项目clone到本地, mvn clean install, 发布到自己本地仓库, 或者在<distributionManagement>中配置好自己服务后上传到私服
+  
 [(一) kona-base-mybatis](https://github.com/engjose/kona-base/wiki/kona-base-mybatis)
 
 [(二) kona-base-model](https://github.com/engjose/kona-base/wiki/kona-base-model)
