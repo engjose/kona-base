@@ -9,7 +9,7 @@ kona-base项目为基础框架依赖, 我们其他服务只需要按需引入kon
 ### 注意:
 此项目是我们之后所有项目的顶层父依赖, 所以先打包到自己的maven本地仓库, 或者上传到自己项目组的私服中.
 
-# kona-base 组件介绍和使用
+# kona-base 基础组件介绍和使用
 [(一) kona-base-mybatis](https://github.com/engjose/kona-base/wiki/kona-base-mybatis)
 
 [(二) kona-base-model](https://github.com/engjose/kona-base/wiki/kona-base-model)
