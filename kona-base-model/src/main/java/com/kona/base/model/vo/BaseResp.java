@@ -29,4 +29,8 @@ public class BaseResp<T> {
     public static BaseResp SUCCESS = new BaseResp("0000", "操作成功", null, null);
     public static BaseResp SERVER_SYS_ERROR = new BaseResp("5000", "系统异常", null, ErrorLevelEnum.SERVER_SYSTEM_ERR.getCode());
     public static BaseResp CLIENT_ERROR = new BaseResp("4000", "客户端异常", null, ErrorLevelEnum.CLIENT_ERR.getCode());
+
+    public BaseResp(T data) {
+        this.data = data;
+    }
 }

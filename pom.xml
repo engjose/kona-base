@@ -31,6 +31,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
             <dependency>
                 <groupId>com.kona</groupId>
                 <artifactId>kona-base-model</artifactId>
@@ -39,6 +40,21 @@
             <dependency>
                 <groupId>com.kona</groupId>
                 <artifactId>kona-base-lib</artifactId>
+                <version>${com.kona.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.kona</groupId>
+                <artifactId>kona-base-mybatis</artifactId>
+                <version>${com.kona.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.kona</groupId>
+                <artifactId>kona-base-bundle-plugin</artifactId>
+                <version>${com.kona.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.kona</groupId>
+                <artifactId>kona-base-security</artifactId>
                 <version>${com.kona.version}</version>
             </dependency>
         </dependencies>

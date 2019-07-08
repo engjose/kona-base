@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.OutputStream;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -105,9 +106,17 @@ public class PoiServiceImpl implements PoiService {
                         String name = field.getName();
                         name = name.substring(0, 1).toUpperCase() + name.substring(1);
                         Method method = clazz.getMethod("get" + name);
-                        //目前只支持String,后续需要进行扩展
+
                         Object invoke = method.invoke(instance);
-                        if (invoke != null) {
+                        if (invoke == null) {
+                            continue;
+                        }
+
+                        // date type
+                        if (field.getType() == Date.class) {
+                            String value = new SimpleDateFormat(annotation.format()).format(invoke);
+                            cells.get(index).setCellValue(value);
+                        } else {
                             String value = invoke.toString();
                             cells.get(index).setCellValue(value);
                         }
@@ -132,7 +141,7 @@ public class PoiServiceImpl implements PoiService {
             if (field.isAnnotationPresent(ExcelColumnAnno.class)) {
                 ExcelColumnAnno annotation = field.getAnnotation(ExcelColumnAnno.class);
                 int index = annotation.index();
-                String name = annotation.name();
+                String name = annotation.label();
                 headers.set(index, name);
             }
         }
@@ -195,7 +204,7 @@ public class PoiServiceImpl implements PoiService {
             if (field.isAnnotationPresent(ExcelColumnAnno.class)) {
                 ExcelColumnAnno annotation = field.getAnnotation(ExcelColumnAnno.class);
                 int index = annotation.index();
-                String name = annotation.name();
+                String name = annotation.label();
                 columns.add(index, name);
             }
         }

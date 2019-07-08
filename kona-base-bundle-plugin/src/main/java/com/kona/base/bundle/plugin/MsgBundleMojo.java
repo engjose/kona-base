@@ -33,8 +33,8 @@ public class MsgBundleMojo extends AbstractMojo {
     @Parameter
     private File templateFile;
 
-    /** 包前缀 */
-    private static final String STANDARD_PACKAGE_PREFIX = "src/main/java/";
+    @Parameter
+    private String parentPath;
 
 
     @Override
@@ -48,7 +48,7 @@ public class MsgBundleMojo extends AbstractMojo {
         int lastIndex = targetClass.lastIndexOf(".");
         String sourcePackage  = targetClass.substring(0, lastIndex);
         String className = targetClass.substring(lastIndex + 1);
-        String targetPackage = STANDARD_PACKAGE_PREFIX + sourcePackage.replace(".", "/");
+        String targetPackage = parentPath + sourcePackage.replace(".", "/");
 
         BufferedWriter bw = null;
         try {

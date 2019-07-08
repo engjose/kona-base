@@ -12,5 +12,6 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ExcelColumnAnno {
     int index();
-    String name();
+    String label();
+    String format() default "yyyy-MM-dd HH:mm:ss";
 }
