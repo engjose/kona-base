@@ -22,7 +22,7 @@ kona-base项目为基础框架依赖, 我们其他服务只需要按需引入kon
 
 [(三) kona-base-bundle-plugin](https://github.com/engjose/kona-base/wiki/kona-base-bundle-plugin)
 
-[(四) kona-base-bundle-plugin](https://github.com/engjose/kona-base/wiki/kona-base-lib)
+[(四) kona-base-lib](https://github.com/engjose/kona-base/wiki/kona-base-lib)
 
 
 
